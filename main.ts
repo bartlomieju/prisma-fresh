@@ -6,7 +6,6 @@
 
 import { InnerRenderFunction, RenderContext, start } from "$fresh/server.ts";
 import manifest from "./fresh.gen.ts";
-
 import { config, setup } from "@twind";
 import { virtualSheet } from "twind/sheets";
 
@@ -24,3 +23,4 @@ function render(ctx: RenderContext, render: InnerRenderFunction) {
 }
 
 await start(manifest, { render });
+await prisma.$disconnect();
